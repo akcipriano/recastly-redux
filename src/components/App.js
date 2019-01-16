@@ -8,6 +8,7 @@ import changeVideo from '../actions/currentVideo.js';
 import changeVideoList from '../actions/videoList.js';
 import exampleVideoData from '../data/exampleVideoData.js';
 import store from '../store/store.js';
+import Search from './Search.js';
 
 export default class App extends React.Component {
   constructor(props) {
@@ -20,7 +21,7 @@ export default class App extends React.Component {
   }
 
   componentDidMount() {
-    this.getYouTubeVideos('react tutorials');
+    this.getYouTubeVideos('funny animals');
   }
 
   handleVideoListEntryTitleClick(video) {
@@ -33,12 +34,17 @@ export default class App extends React.Component {
       query: query
     };
 
-    this.props.searchYouTube(options, (videos) =>
+    this.props.searchYouTube(options, (videos) => {
+      console.log('videos', videos);
       this.setState({
         videos: videos,
         currentVideo: videos[0]
-      })
-    );
+      });
+    });
+  }
+
+  handleSearchInputChange(value) {
+    console.log(value);
   }
 
   //TODO: swap out the React components below for the container components
@@ -48,7 +54,7 @@ export default class App extends React.Component {
       <div>
         <nav className="navbar">
           <div className="col-md-6 col-md-offset-3">
-            <Search handleSearchInputChange={handleSearchInputChange}/>
+            <Search handleSearchInputChange={this.handleSearchInputChange.bind(this)}/>
           </div>
         </nav>
         <div className="row">
