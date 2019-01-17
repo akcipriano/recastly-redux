@@ -35,7 +35,6 @@ export default class App extends React.Component {
     };
 
     this.props.searchYouTube(options, (videos) => {
-      console.log('videos', videos);
       this.setState({
         videos: videos,
         currentVideo: videos[0]
