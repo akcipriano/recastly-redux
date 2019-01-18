@@ -21,7 +21,7 @@ export default class App extends React.Component {
   }
 
   componentDidMount() {
-    this.getYouTubeVideos('funny animals');
+    this.getYouTubeVideos('Koala');
   }
 
   handleVideoListEntryTitleClick(video) {
