@@ -17,8 +17,4 @@ var VideoListEntry = ({video, handleVideoListEntryTitleClick}) => (
   </div>
 );
 
-// VideoListEntry.propTypes = {
-//   video: React.PropTypes.object.isRequired
-// };
-
 export default VideoListEntry;

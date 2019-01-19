@@ -1,13 +1,10 @@
-import React from 'react';
 import Search from './../components/Search.js';
 import { connect } from 'react-redux';
 import handleVideoSearch from '../actions/search.js';
 
-
 var mapStateToProps = (state) => {
   return {
-    value: state.value
-    // videos: state.videoList
+    videos: state.videoList
   };
 };
 
@@ -23,7 +20,6 @@ var mapDispatchToProps = (dispatch) => {
 //HINT: use react-redux 'connect' method to generate a container component from
 //state and dispatch mappings.
 
-// var SearchContainer = connect(mapDispatchToProps)(Search);
 var SearchContainer = connect(mapStateToProps, mapDispatchToProps)(Search);
 
 export default SearchContainer;

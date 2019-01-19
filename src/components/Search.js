@@ -1,21 +1,9 @@
 import React from 'react';
-import SearchContainer from '../containers/SearchContainer.js';
 
 class Search extends React.Component {
   constructor(props) {
     super(props);
-
-    // this.state = {
-    //   value: ''
-    // };
   }
-
-  // handleInputChange(e) {
-  //   this.props.handleSearchInputChange(e.target.value);
-  // this.setState({
-  //   value: e.target.value
-  // });
-  //}
 
   render() {
     return (
@@ -23,11 +11,7 @@ class Search extends React.Component {
         <input
           className="form-control"
           type="text"
-          // value={this.state.value}
-          // onChange={this.handleInputChange.bind(this)}
-          //value={value}
-          onChange={(e) =>this.props.handleSearchInputChange(e.target.value)}
-          // onClick={() => handleVideoListEntryTitleClick(video)}
+          onChange={(e) => this.props.handleSearchInputChange(e.target.value)}
         />
         <button className="btn hidden-sm-down">
           <span className="glyphicon glyphicon-search"></span>
@@ -39,23 +23,3 @@ class Search extends React.Component {
 
 export default Search;
 
-
-// render() {
-//   return (
-//     <div className="search-bar form-inline">
-//       <input
-//         className="form-control"
-//         type="text"
-//         // value={this.state.value}
-//         // onChange={this.handleInputChange.bind(this)}
-//         value={value}
-//         onChange={(e) => handleSearchInputChange(e.target.value)}
-//         // onClick={() => handleVideoListEntryTitleClick(video)}
-//       />
-//       <button className="btn hidden-sm-down">
-//         <span className="glyphicon glyphicon-search"></span>
-//       </button>
-//     </div>
-//   );
-// }
-// }

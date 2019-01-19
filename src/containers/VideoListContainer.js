@@ -2,10 +2,8 @@ import { connect } from 'react-redux';
 import VideoList from './../components/VideoList.js';
 import changeVideo from './../actions/currentVideo.js';
 
-
 var mapStateToProps = (state) => {
   return {
-    // videoList: state.videos,
     videos: state.videoList
   };
 };
